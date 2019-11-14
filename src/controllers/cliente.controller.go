@@ -46,6 +46,13 @@ func CreateClient(w http.ResponseWriter, r *http.Request) {
 
 	query, err := db.Query(tsql)
 
+	if err == nil {
+		jsonresult, _ := json.Marshal(cliente)
+		w.WriteHeader(http.StatusOK)
+		w.Write(jsonresult)
+		return
+	}
+
 	if err.Error() == help.AccountExist {
 		notification := mod.Notification{
 			DPI:    cliente.DPI,
@@ -55,13 +62,6 @@ func CreateClient(w http.ResponseWriter, r *http.Request) {
 
 		jsonresult, _ := json.Marshal(notification)
 		w.WriteHeader(http.StatusConflict)
-		w.Write(jsonresult)
-		return
-	}
-
-	if err == nil {
-		jsonresult, _ := json.Marshal(cliente)
-		w.WriteHeader(http.StatusOK)
 		w.Write(jsonresult)
 		return
 	}
