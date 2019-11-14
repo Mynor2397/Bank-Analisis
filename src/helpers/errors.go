@@ -21,4 +21,7 @@ var (
 
 	// ErrorCuentaNotFound es el error de que no hay cuenta en el sistema
 	ErrorCuentaNotFound = "mssql: NUMERO DE CUENTA INEXISTENTE"
+
+	//AccountExist es para informara de que hay una cuenta con esos datos
+	AccountExist = "mssql: EL NUMERO DE DPI YA SE ENCUENTRA REGISTRADO EN EL SISTEMA"
 )
