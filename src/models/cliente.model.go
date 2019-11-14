@@ -5,5 +5,8 @@ type Cliente struct {
 	DPI       string `json:"dpi,omitempty"`
 	Nombres   string `json:"nombres,omitempty"`
 	Apellidos string `json:"apellidos,omitempty"`
-	Edad      string `json:"edad,omitempty"`
+	FechaNac  string `json:"fecha_nac,omitempty"`
+	Telefono  `json:"telefono,omitempty"`
+	Direccion `json:"direccion,omitempty"`
+	Cuenta    `json:"cuenta,omitempty"`
 }
