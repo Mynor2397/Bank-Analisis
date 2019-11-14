@@ -21,7 +21,7 @@ var (
 
 // CreateClient registra un nuevo cliente en la base de datos
 func CreateClient(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "application/json")
+	w.Header().Set("Content-Type", "Application-json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	defer r.Body.Close()
 	cliente := mod.Cliente{}
@@ -78,7 +78,7 @@ func CreateClient(w http.ResponseWriter, r *http.Request) {
 
 //OnlyAcount es para traer un solo clientes
 func OnlyAcount(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "application/json")
+	w.Header().Set("Content-Type", "Application-json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	params := mux.Vars(r)
 	nocuenta := params["nocuenta"]

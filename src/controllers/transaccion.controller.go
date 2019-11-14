@@ -12,7 +12,7 @@ import (
 
 // Deposito es para el ingreso del dinero a la cuenta bancaria
 func Deposito(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "application/json")
+	w.Header().Set("Content-Type", "Application-json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	defer r.Body.Close()
 	deposit := models.Transaccion{}
@@ -60,7 +60,7 @@ func Deposito(w http.ResponseWriter, r *http.Request) {
 
 // Debito es para el debito automático en la cuenta del cliente
 func Debito(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "application/json")
+	w.Header().Set("Content-Type", "Application-json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	defer r.Body.Close()
 	debito := models.Transaccion{}
