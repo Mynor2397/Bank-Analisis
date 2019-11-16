@@ -13,5 +13,6 @@ func Router() *mux.Router {
 	router.HandleFunc("/deposito", con.Deposito).Methods("POST")
 	router.HandleFunc("/debito", con.Debito).Methods("POST")
 	router.HandleFunc("/cliente/{nocuenta}", con.OnlyAcount).Methods("GET")
+	router.HandleFunc("/transaccion/{nocuenta}", con.AllTransaction).Methods("GET")
 	return router
 }
